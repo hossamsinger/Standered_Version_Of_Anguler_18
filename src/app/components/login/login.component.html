@@ -1,0 +1,36 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand ">Exams App</a>
+    <form class="d-flex">
+      <button class="btn btn-outline-primary" type="submit">Login</button>
+      <button class="btn " type="submit">SignUp</button>
+    </form>
+  </div>
+</nav>
+<div class="login-container">
+    <div class="login-box">
+      <h1>Login</h1>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input 
+            type="email" 
+            [(ngModel)]="email" 
+            name="email"
+            placeholder="admin@gmail.com"
+            class="form-control"
+          >
+        </div>
+        <div class="form-group">
+          <input 
+            type="password" 
+            [(ngModel)]="password" 
+            name="password"
+            placeholder="Password"
+            class="form-control"
+          >
+        </div>
+        <button type="submit" class="login-button">Log in</button>
+      </form>
+      <p class="register-text">Or <a href="#">register now!</a></p>
+    </div>
+  </div>
