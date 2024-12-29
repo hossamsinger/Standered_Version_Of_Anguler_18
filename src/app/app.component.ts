@@ -4,11 +4,12 @@ import { Router, RouterOutlet ,NavigationEnd } from '@angular/router';
 import { NavbarComponent } from '../shared/components/navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgIf } from '@angular/common';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports : [RouterOutlet  , NavbarComponent , DashboardComponent , LoaderComponent ,NgIf],
+  imports : [RouterOutlet  , NavbarComponent , DashboardComponent , LoaderComponent ,NgIf , MatDialogModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 

@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+$colorWhite: #fafbfb;
+$colorLiteGrey: #9199a5;
+$colorDarkGrey: #565d68;
+$colorBlack: #1e2026;
+$colorLite: #bbc3c9;
+$colorBlue: #0068ff;
+$colorBrown: #b17e4c;
+
+$colorBG: #f8f9fb;
+$colorRed: #ec407a;
+$colorGreen: #17c993;
+
+$colorDanger: #d32f2f;
+$colorWarning: #fb8c00;
+$colorGood: #4caf50;
+
+$layoutWidth: 1406px;
+$layoutHeight: 852px;
+$layoutBorder: 35px;
+
+$sidebarWidth: 65px;
+$sidebarHeight: 100%;
+
+$sizeXSmall: 0.5em;
+$sizeSmall: 0.625em;
+$sizeMedium: 0.75em;
+$sizeLarge: 1em;
+$sizeXLarge: 1.5em;
+$sizeXXLarge: 3em;
+
+body {
+	font-family: "Open Sans", sans-serif;
+	background: $colorLite;
+	text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+	width: 100%;
+	height: 100%;
+	background: lighten($colorLiteGrey, 30%);
+	.app {
+		display: flex;
+		flex-direction: column;
+
+	
+
+		.app-content {
+			margin: 20px;
+			background: $colorWhite;
+			border-radius: 5px;
+			height: 716px;
+
+			header {
+				margin: 20px;
+				display: flex;
+				justify-content: space-between;
+
+				.searchbox {
+					display: flex;
+					padding: 10px;
+					background: lighten($colorLiteGrey, 33%);
+					border-radius: 5px;
+					width: 200px;
+					.icon {
+						color: $colorLiteGrey;
+						margin: 0 5px;
+						cursor: pointer;
+					}
+
+					input.search-text {
+						border: none;
+						background: inherit;
+						font-size: $sizeMedium;
+						font-weight: 600;
+						outline: none;						
+					}
+				}
+			}
+		}
+		.app-content {
+			header .app-list-options {
+				display: flex;
+				justify-items: center;
+				align-items: center;
+		
+				.sort-dropdown {
+					display: flex;
+					border: 1px solid $colorLite;
+					border-radius: 5px;
+					padding: 12px;
+					color: $colorLite;
+					font-size: $sizeMedium;
+					font-weight: 600;
+					.by,
+					i {
+						color: $colorBlack;
+						margin-left: 5px;
+					}
+					.drop {
+						border-left: 1px solid $colorLite;
+						margin-left: 10px;
+					}
+				}
+		
+				.icon {
+					margin: 0 10px;
+					padding: 10px;
+					border-radius: 5px;
+					box-shadow: 0px 1px 1px 1px rgba(181, 181, 181, 0.38);
+					position: relative;
+					color: $colorLite;
+					cursor: pointer;
+					
+					&:first-child {				
+						border-top-right-radius: 0;
+						border-bottom-right-radius: 0;
+					}
+					
+					&:last-child {				
+						border-top-left-radius: 0;
+						border-bottom-left-radius: 0;
+					}
+					
+					&.selected {
+						background: lighten($colorDarkGrey, 50%);
+						color: lighten($colorDarkGrey, 20%);
+					}
+				}
+		
+				.display-group {
+					display: flex;
+					button{
+						background-color:lighten($colorBlue, 10%);
+						padding: 6px 6px;
+						border-radius: 4px;
+						font-size: 13px;
+						font-weight: bold;
+						width: 110px;
+						text-transform: capitalize;
+						cursor: pointer;
+						text-align: center;
+						color: lighten($colorWhite, 80%);
+						border: none;
+						
+					}
+					.icon {
+						margin-right:0;
+						margin-left: 0;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// =======================================================
+// ============ Table Design For Transform ================
+// =======================================================
+
+.table-container {
+	overflow-x: auto;
+	
+	margin: 20px;
+	max-height: 600px; // Adjust height as per your requirement
+	overflow-y: auto; // Enable vertical scrolling
+	border: 1px solid #dee2e6; // Optional: Add a border for clarity
+  }
+  
+  .dashboard-table {
+	width: 100%;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 8px;
+	overflow: hidden;
+	overflow-y: scroll;
+  
+	thead {
+	  background: #f8f9fa;
+	  position: sticky; // Keep header visible while scrolling
+	  top: 0;
+	  background: #f8f9fa;
+	  z-index: 1;
+	  
+	  th {
+		padding: 15px;
+		text-align: left;
+		color: #495057;
+		font-weight: bold;
+		font-size: 14px;
+		border-bottom: 2px solid #dee2e6;
+		white-space: nowrap;
+	  }
+	}
+  
+	tbody {
+	  tr {
+		&:hover {
+		  background-color: #f8f9fa;
+		}
+  
+		td {
+		  padding: 15px;
+		  border-bottom: 1px solid #dee2e6;
+		  color: #495057;
+		  font-size: 14px;
+  
+		  &:first-child {
+			font-weight: 500;
+		  }
+  
+		  a {
+			color: #0068ff;
+			text-decoration: none;
+			
+			&:hover {
+			  text-decoration: underline;
+			}
+		  }
+  
+		  &.danger {
+			color: #d32f2f;
+		  }
+		}
+	  }
+	}
+  
+	.status-cell {
+	  display: flex;
+	  gap: 10px;
+	  align-items: center;
+  
+	  .status-button {
+		padding: 6px 12px;
+		border-radius: 4px;
+		font-size: 12px;
+		font-weight: bold;
+		width: 90px;
+		cursor: pointer;
+		text-align: center;
+		
+		&.preview {
+		  background: #d32f2f;
+		  color: white;
+		}
+		
+		&.start {
+		  background: #17c993;
+		  color: white;
+		}
+	  }
+	}
+  
+	.progress-cell {
+	  display: flex;
+	  align-items: center;
+	  gap: 10px;
+  
+	  progress {
+		flex: 1;
+		height: 6px;
+		border-radius: 3px;
+		
+		&::-webkit-progress-bar {
+		  background-color: #e9ecef;
+		  border-radius: 3px;
+		}
+		
+		&::-webkit-progress-value {
+		  background-color: #17c993;
+		  border-radius: 3px;
+		}
+	  }
+  
+	  span {
+		min-width: 40px;
+		text-align: right;
+	  }
+	}
+  }
+@media (min-width: 992px) {
+    .container-lg, .container-md, .container-sm, .container {
+        width: 100%;
+        max-width: 2000px;
+    }
+}

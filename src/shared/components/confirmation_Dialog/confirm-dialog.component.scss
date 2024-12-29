@@ -1,0 +1,40 @@
+mat-dialog-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  mat-dialog-content {
+    font-size: 16px;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  button {
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .status-button {
+		padding: 6px 12px;
+		border-radius: 4px;
+		font-size: 14px;
+		font-weight: bold;
+		width: 90px;
+		cursor: pointer;
+		text-align: center;
+    border: none !important;
+    word-spacing: 18px;
+		
+		&.delete {
+		  background: #d32f2f;
+		  color: rgb(252, 252, 252);
+		}
+		
+		&.cancel {
+		  background: #17c993;
+		  color: white;
+		}
+	  }

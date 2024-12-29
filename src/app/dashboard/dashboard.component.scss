@@ -66,10 +66,9 @@ body {
 	.logo .icon {
 		font-size: $sizeXXLarge;
 		color: $colorWhite;
-
+		cursor: pointer;
 		top: 16px;
 		left: 12px;
-
 		position: absolute;
 		z-index: 100;
 	}
@@ -100,6 +99,7 @@ body {
 			}
 			.icon {
 				font-size: inherit;
+				cursor: pointer;
 			}
 		}
 	}
@@ -204,6 +204,7 @@ body {
 					border-radius: 5px;
 					box-shadow: 0px 1px 1px 1px rgba(181, 181, 181, 0.38);
 					position: relative;
+					cursor: pointer;
 
 					&.user-img {
 						padding: 0;
@@ -249,6 +250,7 @@ body {
 					.icon {
 						color: $colorLiteGrey;
 						margin: 0 5px;
+						cursor: pointer;
 					}
 
 					input.search-text {
@@ -296,6 +298,7 @@ body {
 			box-shadow: 0px 1px 1px 1px rgba(181, 181, 181, 0.38);
 			position: relative;
 			color: $colorLite;
+			cursor: pointer;
 			
 			&:first-child {				
 				border-top-right-radius: 0;
@@ -318,6 +321,7 @@ body {
 			.icon {
 				margin-right:0;
 				margin-left: 0;
+				cursor: pointer;
 			}
 		}
 	}
@@ -361,6 +365,7 @@ body {
 
 			.icon {
 				color: $colorLite;
+				cursor: pointer;
 			}
 		}
 
@@ -386,6 +391,7 @@ body {
 
 				.icon {
 					margin-right: 5px;
+					cursor: pointer;
 				}
 
 				a {
@@ -454,12 +460,13 @@ body {
 			align-items: center;
 
 			.days {
-				padding: 8px 5px;
+				padding: 5px 10px;
 				border-radius: 4px;
 				background: $colorLite;
 				font-size: 12px;
 				color: $colorDarkGrey;
 				background: lighten($colorDarkGrey, 50%);
+				cursor: pointer;
 
 				&.good {
 					color: $colorGood;
@@ -481,10 +488,17 @@ body {
 					color: $colorWhite;
 					background: lighten($colorGood, 0%);
                     font-weight: bold;
-					cursor: pointer;
 				}
 				&.preview {
 					background: lighten($colorDanger, 0%);
+				}
+				&.ordinary {
+					padding: 5px 10px;
+					background: lighten($colorBlue, 0%);
+					color: $colorWhite;
+					font-weight: bold;
+					margin: 10px 0 0 0;
+
 				}
 			}
 		}
@@ -511,6 +525,123 @@ body {
 		cursor: pointer;
 	}
 }
+
+// =======================================================
+// ============ Table Design For Transform ================
+// =======================================================
+
+.table-container {
+	margin: 20px;
+	overflow-x: auto;
+  }
+  
+  .dashboard-table {
+	width: 100%;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 8px;
+	overflow: hidden;
+  
+	thead {
+	  background: #f8f9fa;
+	  
+	  th {
+		padding: 15px;
+		text-align: left;
+		color: #495057;
+		font-weight: 600;
+		font-size: 14px;
+		border-bottom: 2px solid #dee2e6;
+		white-space: nowrap;
+	  }
+	}
+  
+	tbody {
+	  tr {
+		&:hover {
+		  background-color: #f8f9fa;
+		}
+  
+		td {
+		  padding: 15px;
+		  border-bottom: 1px solid #dee2e6;
+		  color: #495057;
+		  font-size: 14px;
+  
+		  &:first-child {
+			font-weight: 500;
+		  }
+  
+		  a {
+			color: #0068ff;
+			text-decoration: none;
+			
+			&:hover {
+			  text-decoration: underline;
+			}
+		  }
+  
+		  &.danger {
+			color: #d32f2f;
+		  }
+		}
+	  }
+	}
+  
+	.status-cell {
+	  display: flex;
+	  gap: 10px;
+	  align-items: center;
+  
+	  .status-button {
+		padding: 6px 12px;
+		border-radius: 4px;
+		font-size: 12px;
+		font-weight: bold;
+		width: 90px;
+		cursor: pointer;
+		text-align: center;
+		
+		&.preview {
+		  background: #d32f2f;
+		  color: white;
+		}
+		
+		&.start {
+		  background: #17c993;
+		  color: white;
+		}
+	  }
+	}
+  
+	.progress-cell {
+	  display: flex;
+	  align-items: center;
+	  gap: 10px;
+  
+	  progress {
+		flex: 1;
+		height: 6px;
+		border-radius: 3px;
+		
+		&::-webkit-progress-bar {
+		  background-color: #e9ecef;
+		  border-radius: 3px;
+		}
+		
+		&::-webkit-progress-value {
+		  background-color: #17c993;
+		  border-radius: 3px;
+		}
+	  }
+  
+	  span {
+		min-width: 40px;
+		text-align: right;
+	  }
+	}
+  }
+//   ============================================================
 @media (min-width: 992px) {
     .container-lg, .container-md, .container-sm, .container {
         width: 100%;

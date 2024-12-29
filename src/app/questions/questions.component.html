@@ -1,0 +1,50 @@
+<section class="main-content">
+    <div class="app">
+      <section class="app-content">
+        <header>
+          <div class="searchbox">
+            <div class="icon"><i class="fa fa-search" aria-hidden="true"></i></div>
+            <input type="text" name="search" placeholder="Search For Questions" class="search-text" />
+          </div>
+          <div class="app-list-options">
+            <div class="display-group">
+                <button  class="add_new"> Add Question</button> 
+            </div>
+          </div>
+        </header>        
+        <div  class="table-container">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>category</th>
+                  <th>level</th>
+                  <th>Progress</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  <td>{{ item.title }}</td>
+                  <td>{{ item.category }}</td>
+                  <td>{{ item.level }}</td>
+                  <td>
+                    <div class="progress-cell">
+                      <progress [value]="item.progress" max="100"></progress>
+                      <span>{{ item.progress }}%</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="status-cell">
+                      <span class="status-button preview" (click)="openUpdateDialog(item)">Update</span>
+                      <span class="status-button start" (click)="openDeleteDialog()">Delete</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </section>
+    </div>
+  </section>
+  
