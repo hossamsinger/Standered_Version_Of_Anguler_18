@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ExamProgressComponent } from './exam-progress/exam-progress.component';
 import { ExamCompletionComponent } from "./exam-completion/exam-completion.component";
-import { ExamService } from '../../../shared/services/exam.services';
+import { ExamService } from '../../shared/services/exam.services';
 
+//  This Is Exam Consumar 
 @Component({
   selector: 'app-exam',
   standalone: true,

@@ -73,10 +73,14 @@ body {
             z-index: 1000;
 
 			.title {
-				font-weight: bold;
 				margin-left: 20px;
-                color: $colorGood;
-				
+				box-shadow: 2px 2px 2px #0068ff;
+			}a{
+				text-decoration: none;
+				cursor: pointer;
+				font-weight: bold;
+				font-size: 18px;
+				font-style: $colorBlue;
 			}
 
 			.menu {

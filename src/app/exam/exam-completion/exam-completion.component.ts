@@ -1,7 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { ExamService } from '../../../../shared/services/exam.services';
+import { ExamService } from '../../../shared/services/exam.services';
 
 @Component({
   selector: 'app-exam-completion',

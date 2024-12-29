@@ -1,4 +1,4 @@
-import { ExamService } from './../../../../shared/services/exam.services';
+import { ExamService } from '../../../shared/services/exam.services';
 import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';

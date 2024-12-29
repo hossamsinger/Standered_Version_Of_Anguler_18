@@ -1,15 +1,15 @@
 import { Injectable, signal } from '@angular/core';
 import { questions } from '../../data/question';
 
-
-
 export interface ExamState {
   currentQuestionIndex: number;
   answers: Record<number, number>;
 }
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class ExamService {
   private examState = signal<ExamState>({
     currentQuestionIndex: 0,
@@ -20,6 +20,7 @@ export class ExamService {
   getExamState() {
     return this.examState;
   }
+
   isCompleted() {
     return this.completed;
   }
@@ -51,9 +52,7 @@ export class ExamService {
       }));
     }
   }
-  // completeExam() {
-  //   this.completed.set(true);
-  // }
+ 
   resetExam() {
     this.examState.set({
       currentQuestionIndex: 0,
@@ -69,6 +68,7 @@ export class ExamService {
   getCurrentQuestion() {
     return questions[this.examState().currentQuestionIndex];
   }
+
   completeExam() {
     const allQuestionsAnswered = questions.every((_, index) => 
       this.examState().answers[index] !== undefined

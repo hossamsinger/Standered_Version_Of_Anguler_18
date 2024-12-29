@@ -1,4 +1,4 @@
-import { LoaderService } from './../../../shared/services/loader.services';
+import { LoaderService } from '../../shared/services/loader.services';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -42,10 +42,10 @@ export class LoginComponent {
         };
         localStorage.setItem('user', JSON.stringify(userData));
         this.loaderService.hide();
-        this.snackBar.open('Login successful!', 'Close', {
-          duration: 3000, // Snackbar duration in milliseconds
-          panelClass: ['success-snackbar'], // Optional custom styling class
-        });
+        // this.snackBar.open('Login successful!', 'Close', {
+        //   duration: 3000, // Snackbar duration in milliseconds
+        //   panelClass: ['success-snackbar'], // Optional custom styling class
+        // });
         this.router.navigate(['/dashboard']);
         return;
       }
@@ -55,18 +55,18 @@ export class LoginComponent {
       
       if (userData.email === this.email && userData.password === this.password) {
         this.loaderService.hide();
-        this.snackBar.open('Login successful!', 'Close', {
-          duration: 3000,
-          panelClass: ['success-snackbar'],
-        });
+        // this.snackBar.open('Login successful!', 'Close', {
+        //   duration: 3000,
+        //   panelClass: ['success-snackbar'],
+        // });
         this.router.navigate(['/dashboard']);
       } else {
         this.errorMessage = 'Invalid email or password';
         this.loaderService.hide();
-        this.snackBar.open(this.errorMessage, 'Close', {
-          duration: 3000,
-          panelClass: ['error-snackbar'],
-        });
+        // this.snackBar.open(this.errorMessage, 'Close', {
+        //   duration: 3000,
+        //   panelClass: ['error-snackbar'],
+        // });
       }
     }, 3000);
   }

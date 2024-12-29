@@ -1,16 +1,31 @@
 import { LoaderComponent } from './../shared/components/loader/loader.component';
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterOutlet ,NavigationEnd } from '@angular/router';
 import { NavbarComponent } from '../shared/components/navbar/navbar.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgIf } from '@angular/common';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports : [RouterOutlet  , NavbarComponent , DashboardComponent , LoaderComponent],
+  imports : [RouterOutlet  , NavbarComponent , DashboardComponent , LoaderComponent ,NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 
 })
-export class AppComponent {
-  title = 'Version_18';
+export class AppComponent implements OnInit {
+  showNavbar = true;
+
+  constructor(private router: Router) {}
+
+  // Handel APper Navbar Showen Or Not IN Login Page 
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // List of routes where the navbar should not appear
+        const noNavbarRoutes = ['/login'];
+        this.showNavbar = !noNavbarRoutes.includes(event.urlAfterRedirects);
+      }
+    });
+  }
 }
