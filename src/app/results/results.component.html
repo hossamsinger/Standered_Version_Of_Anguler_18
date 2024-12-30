@@ -1,0 +1,47 @@
+<section class="main-content">
+    <div class="app">
+      <section class="app-content">
+        <header>
+          <div class="searchbox">
+            <div class="icon"><i class="fa fa-search" aria-hidden="true"></i></div>
+            <input type="text" name="search" placeholder="Search For Results" class="search-text" />
+          </div>
+        </header>        
+        <div  class="table-container">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Exam ID </th>
+                  <th>Exam Title</th>
+                  <th>Employee Id</th>
+                  <th>Employee Name</th>
+                  <th>Start Time </th>
+                  <th>End Time </th>
+                  <th>Total Score</th>
+                  <th>Status </th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  <td>{{ item.examId }}</td>
+                  <td>{{ item.examTitle }}</td>
+                  <td>{{ item.employeeId }}</td>
+                  <td>{{ item.employeeName }}</td>
+                  <td>{{ item.startTime }}</td>
+                  <td>{{ item.endTime }}</td>
+                  <td>{{ item.totalScore }}</td>
+                  <td  [class]="item.totalScore <= 70 ? 'danger' : 'good'">{{ item.status }}</td>
+                  <td>
+                    <div class="status-cell">
+                      <button  class="status-button preview">Preview Result</button >
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </section>
+    </div>
+  </section>
+  

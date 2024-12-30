@@ -9,7 +9,7 @@ import { dashboard_data } from '../../data/dashboard';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  showTableView = false; // Toggle between list view and table view
+  showTableView = true; // Toggle between list view and table view
   // items = dashboard_data;
   items = [
     {

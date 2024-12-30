@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
-
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @import "../../styles.scss";
 
@@ -159,6 +158,7 @@ body {
 	  z-index: 1111111;
 	  
 	  th {
+		text-align: center;
 		padding: 15px;
 		text-align: left;
 		color: #495057;
@@ -176,6 +176,7 @@ body {
 		}
   
 		td {
+		  text-align: center;
 		  padding: 15px;
 		  border-bottom: 1px solid #dee2e6;
 		  color: #495057;
@@ -205,7 +206,8 @@ body {
 	  display: flex;
 	  gap: 10px;
 	  align-items: center;
-  
+	  cursor: pointer;
+
 	  .status-button {
 		padding: 6px 12px;
 		border-radius: 4px;
@@ -223,6 +225,9 @@ body {
 		&.start {
 		  background: #17c993;
 		  color: white;
+		}
+		&:hover{
+			cursor: pointer;
 		}
 	  }
 	}

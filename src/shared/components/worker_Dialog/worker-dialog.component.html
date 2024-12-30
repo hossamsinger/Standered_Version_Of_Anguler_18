@@ -1,6 +1,7 @@
 <h2 mat-dialog-title>Update Question</h2>
 <mat-dialog-content>
   <form #updateForm="ngForm">
+    
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Title</mat-label>
       <input matInput [(ngModel)]="data.title" name="title" required>
@@ -11,25 +12,6 @@
       <input matInput [(ngModel)]="data.category" name="category" required>
     </mat-form-field>
 
-    <!-- <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Level</mat-label>
-      <mat-select [(ngModel)]="data.level" name="level" >
-        <mat-option *ngFor="let level of levels" [value]="level">
-          {{level}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field> -->
-    <!-- <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Level</mat-label>
-      <mat-select [(ngModel)]="data.level" name="level" required>
-        <mat-option [value]="1">Level 1 (Beginner)</mat-option>
-        <mat-option [value]="2">Level 2 (Elementary)</mat-option>
-        <mat-option [value]="3">Level 3 (Intermediate)</mat-option>
-        <mat-option [value]="4">Level 4 (Advanced)</mat-option>
-        <mat-option [value]="5">Level 5 (Expert)</mat-option>
-      </mat-select>
-    </mat-form-field> -->
-
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Level</mat-label>
       <input matInput type="number" [(ngModel)]="data.level" name="level" min="0" max="5" required>
@@ -39,6 +21,7 @@
       <mat-label>Progress</mat-label>
       <input matInput type="number" [(ngModel)]="data.progress" name="progress" min="0" max="100" required>
     </mat-form-field>
+
   </form>
 </mat-dialog-content>
 <mat-dialog-actions align="center">

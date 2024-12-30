@@ -1,35 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-
-$colorWhite: #fafbfb;
-$colorLiteGrey: #9199a5;
-$colorDarkGrey: #565d68;
-$colorBlack: #1e2026;
-$colorLite: #bbc3c9;
-$colorBlue: #0068ff;
-$colorBrown: #b17e4c;
-
-$colorBG: #f8f9fb;
-$colorRed: #ec407a;
-$colorGreen: #17c993;
-
-$colorDanger: #d32f2f;
-$colorWarning: #fb8c00;
-$colorGood: #4caf50;
-
-$layoutWidth: 1406px;
-$layoutHeight: 852px;
-$layoutBorder: 35px;
-
-$sidebarWidth: 65px;
-$sidebarHeight: 100%;
-
-$sizeXSmall: 0.5em;
-$sizeSmall: 0.625em;
-$sizeMedium: 0.75em;
-$sizeLarge: 1em;
-$sizeXLarge: 1.5em;
-$sizeXXLarge: 3em;
+@import "../styles.scss";
 
 body {
 	font-family: "Open Sans", sans-serif;

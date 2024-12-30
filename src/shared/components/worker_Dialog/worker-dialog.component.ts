@@ -82,14 +82,13 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrls: ['./worker-dialog.component.scss'],
 })
 export class UpdateDialogComponent {
-  levels = [1, 2, 3, 4, 5]; // Example data for levels dropdown
-
-  // Define a variable to bind form data
+  levels = [1, 2, 3, 4, 5]; 
   formData: any = {
     title: "",
     category: "",
     level: null,
     progress: null,
+    id: null
   };
 
   constructor(
@@ -98,38 +97,38 @@ export class UpdateDialogComponent {
   ) {}
 
   onCancel(): void {
-    this.dialogRef.close(); // Close the dialog without saving changes
+    this.dialogRef.close(); 
   }
 
   onSubmit(action: string): void {
+    debugger;
+    // Logic for adding a question
     if (action === 'add') {
-      // Logic for adding a question
-      const newQuestion = { ...this.data, id: this.generateId() }; // Clone form data and generate unique ID
-  
+      const newQuestion = { ...this.data, id: this.generateId() }; 
       if (!Array.isArray(this.data.questions)) {
-        this.data.questions = []; // Ensure questions is an array
+        this.data.questions = []; 
       }
   
-      this.data.questions.unshift(newQuestion); // Add the new question to the array
+      this.data.questions.unshift(newQuestion); 
       console.log('Question added:', newQuestion);
       console.log('Data Modified:', this.data);
   
-    } else if (action === 'update') {
-      // Logic for updating a question
+    } 
+    // Logic for updating a question
+    else if (action === 'update') {
       const updatedQuestion = { ...this.formData };
-      const index = Array(this.data.questions).findIndex((q: any) => q.id === updatedQuestion.id); // Find the index by id
-  
+      const checkArray = Array(this.data)
+      const index = checkArray.findIndex((q: any) => q.id === updatedQuestion.id); // Find the index by id
       if (index > -1) {
-        this.data.questions[index] = updatedQuestion; // Update the question
+        this.data.questions[index] = updatedQuestion; 
         console.log('Question updated:', updatedQuestion);
       }
     }
-  
-    this.dialogRef.close(this.data); // Close the dialog and pass the updated data
+    this.dialogRef.close(this.data); 
   }
   
   private generateId(): number {
-    return Date.now(); // Unique ID based on timestamp
+    return Date.now(); 
   }
   
 }

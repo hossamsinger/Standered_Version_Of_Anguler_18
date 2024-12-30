@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import "../../styles.scss";
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+  background: #f7f7f7;
+
+  .app {
+    display: flex;
+    flex-direction: column;
+
+    .app-content {
+      margin: 20px;
+      background: white;
+      border-radius: 5px;
+
+      header {
+        margin: 20px;
+        display: flex;
+        justify-content: space-between;
+
+        .searchbox {
+          display: flex;
+          padding: 10px;
+          background: #e9ecef;
+          border-radius: 5px;
+          width: 200px;
+
+          .icon {
+            color: #6c757d;
+            margin-right: 5px;
+            cursor: pointer;
+          }
+
+          input.search-text {
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            font-weight: 600;
+            outline: none;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.table-container {
+  overflow-x: auto;
+  margin: 20px;
+  max-height: 600px; // Adjust height if needed
+  overflow-y: auto; // Enable vertical scrolling
+  border: 1px solid #dee2e6;
+}
+
+.dashboard-table {
+	width: 100%;
+	border-collapse: collapse;
+	background: white;
+  
+	thead {
+	  position: sticky;
+	  top: 0;
+	  background: #f8f9fa;
+  
+	  th {
+		text-align: center; // Center-align headers
+		padding: 15px;
+		font-weight: bold;
+		font-size: 14px;
+		border-bottom: 2px solid #dee2e6;
+		color: #495057;
+	  }
+	}
+  
+	tbody {
+	  tr {
+		&:hover {
+		  background-color: #f8f9fa;
+		}
+  
+		td {
+		  padding: 15px;
+		  border-bottom: 1px solid #dee2e6;
+		  color: #495057;
+		  font-size: 16px;
+		  text-align: center; // Center-align text horizontally
+		  vertical-align: middle; // Center-align text vertically
+  
+		  &:first-child {
+			font-weight: bold;
+			color: $colorBlue;
+		  }
+		  &.danger { 
+			color: $colorDanger;
+			font-weight: bold;
+		}
+		  &.good { 
+			font-weight: bold;
+			color: $colorGood;}
+		}
+	  }
+	}
+  
+	.status-cell {
+	  display: flex;
+	  justify-content: center; // Center-align flex content horizontally
+	  align-items: center; // Center-align flex content vertically
+	  gap: 10px;
+  
+	  .status-button {
+		padding: 6px 12px;
+		border-radius: 4px;
+		font-size: 12px;
+		font-weight: bold;
+		text-align: center;
+
+		&.preview {
+			background: $colorBlue;
+			color: white;
+			cursor: pointer; /* Ensure pointer cursor is applied */
+			border: none;
+		}
+	  }
+	}
+  }
+  
+
+@media (min-width: 992px) {
+  .container {
+    width: 100%;
+    max-width: 2000px;
+  }
+}
