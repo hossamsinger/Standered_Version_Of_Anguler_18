@@ -8,7 +8,7 @@
           </div>
           <div class="app-list-options">
             <div class="display-group">
-                <button  class="add_new"> Add Question</button> 
+                <button  class="add_new" (click)="openUpdateDialog([])" > Add Question</button> 
             </div>
           </div>
         </header>        
@@ -19,6 +19,7 @@
                   <th>Title</th>
                   <th>category</th>
                   <th>level</th>
+                  <th>correct Answer</th>
                   <th>Progress</th>
                   <th>Actions</th>
                 </tr>
@@ -28,6 +29,7 @@
                   <td>{{ item.title }}</td>
                   <td>{{ item.category }}</td>
                   <td>{{ item.level }}</td>
+                  <td>{{ item.correctAnswer }}</td>
                   <td>
                     <div class="progress-cell">
                       <progress [value]="item.progress" max="100"></progress>

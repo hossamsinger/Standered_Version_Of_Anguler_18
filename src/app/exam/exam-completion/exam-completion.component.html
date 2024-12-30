@@ -1,0 +1,18 @@
+@if (showPopup()) {
+    <div class="popup-overlay">
+      <div class="popup-content">
+        <div class="completion-icon">🎉</div>
+        <h2 class="completion-title">Congratulations!</h2>
+        <p class="completion-message">You have successfully completed the exam.</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <span class="stat-label">Questions Answered</span>
+            <span class="stat-value">{{answeredCount()}} / {{totalQuestions()}}</span>
+          </div>
+        </div>
+        <button class="btn-primary" (click)="onFinish()">
+          Return to Dashboard
+        </button>
+      </div>
+    </div>
+  }

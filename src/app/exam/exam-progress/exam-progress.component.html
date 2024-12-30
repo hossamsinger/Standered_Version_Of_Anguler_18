@@ -1,0 +1,16 @@
+<div class="progress-card">
+    <h3 class="progress-title">Exam Progress</h3>
+    <div class="checkbox-grid">
+      @for (question of questions(); track question.id) {
+        <div class="checkbox-item">
+          <input 
+            type="checkbox"
+            [checked]="isAnswered(question.id - 1)"
+            disabled
+            class="progress-checkbox"
+          />
+          <span class="question-number">{{question.id}}</span>
+        </div>
+      }
+    </div>
+  </div>

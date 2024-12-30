@@ -1,0 +1,49 @@
+<div class="question-card">
+    <div class="question-header">
+      <span class="question-number">Question {{currentQuestion().id}}</span>
+      <span class="question-count">{{examState().currentQuestionIndex + 1}} of {{questions().length}}</span>
+    </div>
+
+    <div class="question-content">
+      <p class="question-text">{{currentQuestion().title}}</p>
+
+      <div class="choices-list">
+        @for (choice of currentQuestion().choices; track $index) {
+          <label 
+            class="choice-item"
+            [class.selected]="isSelected($index)"
+          >
+            <input
+              type="radio"
+              [name]="'q' + currentQuestion().id"
+              [value]="$index"
+              [checked]="isSelected($index)"
+              (change)="onAnswer($index)"
+              class="sr-only"
+            />
+            <span class="choice-text">{{choice}}</span>
+          </label>
+        }
+      </div>
+    </div>
+
+    <div class="question-footer">
+      <button
+        type="button"
+        class="btn-secondary"
+        (click)="onBack()"
+        [disabled]="isFirstQuestion()"
+      >
+        Previous
+      </button>
+      <button
+        type="button"
+        class="btn-primary"
+        (click)="onNext()"
+        [disabled]="!isAnswered()"
+
+      >
+        {{isLastQuestion() ? 'Finish Exam' : 'Next Question'}}
+      </button>
+    </div>
+  </div>
