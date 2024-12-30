@@ -1,174 +1,114 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
-
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-
-$colorWhite: #fafbfb;
-$colorLiteGrey: #9199a5;
-$colorDarkGrey: #565d68;
-$colorBlack: #1e2026;
-$colorLite: #bbc3c9;
-$colorBlue: #0068ff;
-$colorBrown: #b17e4c;
-
-$colorBG: #f8f9fb;
-$colorRed: #ec407a;
-$colorGreen: #17c993;
-
-$colorDanger: #d32f2f;
-$colorWarning: #fb8c00;
-$colorGood: #4caf50;
-
-$layoutWidth: 1406px;
-$layoutHeight: 852px;
-$layoutBorder: 35px;
-
-$sidebarWidth: 65px;
-$sidebarHeight: 100%;
-
-$sizeXSmall: 0.5em;
-$sizeSmall: 0.625em;
-$sizeMedium: 0.75em;
-$sizeLarge: 1em;
-$sizeXLarge: 1.5em;
-$sizeXXLarge: 3em;
-
-body {
-	font-family: "Open Sans", sans-serif;
-	background: $colorLite;
-	text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-	margin-bottom: 20px;
-    width: 100% !important;
-    position: relative;
-    z-index: 100;
-	.content {
-		background: $colorWhite;
-		display: flex;
-        flex-direction: column;
-	}
-}
+@import '../../../styles.scss';
 .main-content {
-	width: 100%;
-	height: 100%;
-	background: lighten($colorLiteGrey, 30%);
-	.app {
-		display: flex;
-		flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: lighten($colorLiteGrey, 30%);
+  
+  .app {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
 
-		.sub-menu {
-            position: sticky;
-            top: 0;
-            left: 0;
-            width: 100%;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			background: $colorWhite;
-			box-shadow: 0px 1px 1px 1px rgba(181, 181, 181, 0.38);
-			height: 60px;
-            z-index: 1000;
+    .sub-menu {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: $colorWhite;
+      box-shadow: 0px 1px 1px 1px rgba(181, 181, 181, 0.38);
+      height: 60px;
+      z-index: 1000;
 
-			.title {
-				margin-left: 20px;
-				box-shadow: 2px 2px 2px #0068ff;
-			}a{
-				text-decoration: none;
-				cursor: pointer;
-				font-weight: bold;
-				font-size: 18px;
-				font-style: $colorBlue;
-			}
-
-			.menu {
-				display: flex;
-				list-style: none;
-				height: 100%;
-                margin: 0;
-                padding: 0;
+      .title {
+        margin-left: 20px;
+        // box-shadow: 2px 2px 2px #0068ff;
         
-
-				li {
-					margin: 0 10px;
-					text-transform: uppercase;
-					font-weight: bold;
-					font-size: 0.75em;
-					color: lighten($colorDarkGrey, 10%);
-					display: flex;
-					align-items: center;
-
-					&.selected, &:hover {
-						color: $colorBlue;
-						position: relative;
-
-						&::after {
-							content: "";
-							border-bottom: 5px solid $colorBlue;
-
-							position: absolute;
-							bottom: 0;
-
-							width: 100%;
-						}
-						.badge {
-							background: $colorBlue;
-							color: $colorWhite;
-						}
-					}
-					
-					&:hover {
-						cursor: pointer;
-					}
-                    .badge {
-                        display: inline-block;
-                        min-width: 30px;
-                        padding: 5px 10px;
-                        background: $colorBlue;
-                        color: $colorWhite;
-                        border-radius: 12px;
-                        text-align: center;
-                        font-size: $sizeMedium;
-                        margin-left: 8px;
-					}
-					
-				}
-			}
-			.user-options {
-				display: flex;
-				margin-right: 16px;
-
-				.icon {
-					margin: 0 8px;
-					padding: 10px;
-					border-radius: 5px;
-					box-shadow: 0px 1px 1px 1px rgba(181, 181, 181, 0.38);
-					position: relative;
-
-					&.user-img {
-						padding: 0;
-						border: none;
-						img {
-							border-radius: 5px;
-						}
-					}
-
-					.badge {
-						position: absolute;
-						top: -10px;
-						right: -8px;
-						border-radius: 50%;
-						background: $colorRed;
-						color: $colorWhite;
-						font-size: 12px;
-						padding-top: 5px;
-						width: 20px;
-						height: 15px;
-					}
-				}
-			}
+        a {
+          text-decoration: none;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 18px;
+          color: $colorBlue;
         }
+      }
+
+      .menu {
+        display: flex;
+        list-style: none;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      
+        li {
+          margin: 0 10px;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 0.75em;
+          color: lighten($colorDarkGrey, 10%);
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          position: relative;
+      
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px; // Adjust to fit your design
+            left: 0;
+            width: 0; // Start with no width
+            height: 5px;
+            background-color: $colorBlue;
+            transition: width 0.3s ease; // Smooth transition for width
+          }
+      
+          &:hover,
+          &.selected {
+            color: $colorBlue;
+      
+            &::after {
+              width: 100%; // Expand to full width on hover
+            }
+      
+            .badge {
+              background: $colorBlue;
+              color: $colorWhite;
+            }
+          }
+      
+          .badge {
+            display: inline-block;
+            min-width: 30px;
+            padding: 5px 10px;
+            background: $colorLiteGrey;
+            color: $colorWhite;
+            border-radius: 12px;
+            text-align: center;
+            font-size: $sizeMedium;
+            margin-left: 8px;
+          }
+        }
+      }
+      
+
+      .user-options {
+        display: flex;
+        margin-right: 16px;
+
+        .icon {
+          margin: 0 8px;
+          padding: 10px;
+          border-radius: 5px;
+          box-shadow: 0px 1px 1px 1px rgba(181, 181, 181, 0.38);
+          position: relative;
+          cursor: pointer;
+        }
+      }
     }
+  }
 }

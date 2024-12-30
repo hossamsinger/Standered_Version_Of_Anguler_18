@@ -1,0 +1,12 @@
+<div class="exam-container">
+    <div class="exam-content">
+      <div class="exam-sidebar">
+        <app-exam-progress />
+      </div>
+      <div class="exam-main">
+        <app-exam-question />
+      </div>
+    </div>
+  </div>
+  <!-- <app-exam-completion /> -->
+  <app-exam-completion *ngIf="isExamCompleted()" />

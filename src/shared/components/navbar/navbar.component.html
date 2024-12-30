@@ -1,27 +1,26 @@
 <section class="main-content">
     <div class="app">
-        <header class="sub-menu">
-            <div class="title"> <a  routerLink="/dashboard">Quize APP</a> </div>
-            <ul class="menu">
-                <li routerLink="/dashboard" routerLinkActive="selected">Dashboard
-                    <div class="badge"> 5 </div>
-                </li>
-                <li routerLink="/exam" routerLinkActive="selected">Exam Starting
-                </li>
-                <li routerLink="/question" routerLinkActive="selected"> All Question
-                    <div class="badge"> 50 </div>
-                </li>
-                <!-- <li> All Employees
-                    <div class="badge"> 2 </div>
-                </li> -->
-                <li>   Results
-                    <div class="badge"> 12 </div>
-                </li>
-            </ul>
-
-            <div class="user-options">
-                <div class="icon"> <i class="fa fa-search" aria-hidden="true"></i> </div>   
+      <header class="sub-menu">
+        <div class="title">
+          <a routerLink="/dashboard">Quiz APP</a>
+        </div>
+        
+        <ul class="menu">
+          <li *ngFor="let item of navItems" 
+              [routerLink]="item.path" 
+              routerLinkActive="selected">
+            {{ item.label }}
+            <div class="badge" *ngIf="item.badge">
+              {{ item.badge }}
             </div>
-        </header>
+          </li>
+        </ul>
+  
+        <div class="user-options">
+          <div class="icon">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </div>
+        </div>
+      </header>
     </div>
-</section>
+  </section>

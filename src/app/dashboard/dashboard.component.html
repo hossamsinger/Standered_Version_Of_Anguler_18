@@ -1,6 +1,7 @@
 <section class="main-content">
     <div class="app">
       <section class="app-content">
+        <!-- Header View -->
         <header>
           <div class="searchbox">
             <div class="icon"><i class="fa fa-search" aria-hidden="true"></i></div>
@@ -19,7 +20,7 @@
           </div>
         </header>
   
-        <!-- Conditional Rendering -->
+        <!-- Bars View -->
         <ul class="projects" *ngIf="!showTableView">
           <li class="project-item" *ngFor="let item of items">
             <div class="title-row">
@@ -84,7 +85,7 @@
                 </tr>
               </tbody>
             </table>
-          </div>
+        </div>
       </section>
     </div>
   </section>

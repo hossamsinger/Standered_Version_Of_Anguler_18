@@ -1,2 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/scss/bootstrap";
+// Colors
+$colorWhite: #fafbfb;
+$colorLiteGrey: #9199a5;
+$colorDarkGrey: #565d68;
+$colorBlack: #1e2026;
+$colorLite: #bbc3c9;
+$colorBlue: #0068ff;
+$colorBrown: #b17e4c;
+$colorBG: #f8f9fb;
+$colorRed: #ec407a;
+$colorGreen: #17c993;
+$colorDanger: #d32f2f;
+$colorWarning: #fb8c00;
+$colorGood: #4caf50;
+
+// Layout
+$layoutWidth: 1406px;
+$layoutHeight: 852px;
+$layoutBorder: 35px;
+$sidebarWidth: 65px;
+$sidebarHeight: 100%;
+
+// Font sizes
+$sizeXSmall: 0.5em;
+$sizeSmall: 0.625em;
+$sizeMedium: 0.75em;
+$sizeLarge: 1em;
+$sizeXLarge: 1.5em;
+$sizeXXLarge: 3em;
