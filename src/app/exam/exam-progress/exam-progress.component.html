@@ -6,7 +6,7 @@
           <input 
             type="checkbox"
             [checked]="isAnswered(question.id - 1)"
-            disabled
+            [disabled]="!isAnswered(question.id - 1)"
             class="progress-checkbox"
           />
           <span class="question-number">{{question.id}}</span>

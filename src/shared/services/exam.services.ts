@@ -51,9 +51,7 @@ export class ExamService {
       }));
     }
   }
-  // completeExam() {
-  //   this.completed.set(true);
-  // }
+
   resetExam() {
     this.examState.set({
       currentQuestionIndex: 0,

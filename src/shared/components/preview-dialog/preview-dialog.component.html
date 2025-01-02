@@ -1,0 +1,33 @@
+<section class="main-content">
+  <div class="app">
+    <section class="app-content">
+      <div  class="table-container">
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>category</th>
+                <th>choices</th>
+                <th>correct Answer</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td>{{ item.title }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.choices.join(', ') }}</td>
+                <td>{{ getCorrectAnswer(item.choices, item.correctAnswer) }}</td>
+                <td>
+                  <div class="status-cell">
+                    <span class="status-button preview" >Edit</span>
+                    <span class="status-button start" >Delete</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </section>
+  </div>
+</section>

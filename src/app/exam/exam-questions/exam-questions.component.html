@@ -36,12 +36,19 @@
       >
         Previous
       </button>
-      <button
+      <!-- <button
         type="button"
         class="btn-primary"
         (click)="onNext()"
         [disabled]="!isAnswered()"
 
+      >
+        {{isLastQuestion() ? 'Finish Exam' : 'Next Question'}}
+      </button> -->
+      <button
+        type="button"
+        class="btn-primary"
+        (click)="onNext()"
       >
         {{isLastQuestion() ? 'Finish Exam' : 'Next Question'}}
       </button>

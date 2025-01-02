@@ -40,8 +40,8 @@
               <div [class]="item.daysLeft <= 3 ? 'days danger' : 'days'">
                 <i class="fa fa-clock-o icon" aria-hidden="true"></i> {{ item.daysLeft }} days left
               </div>
-              <div class="days preview">Preview</div>
-              <div class="days success">Start Exam</div>
+              <div class="days preview"  (click)="openPreview(item)">Preview</div>
+              <div class="days success" (click)="navigateToExam()">Start Exam</div>
             </div>
             <div class="footer-row d-flex align-content-center justify-content-between">
               <div class="days ordinary">All Employee </div>
@@ -78,8 +78,8 @@
                   </td>
                   <td>
                     <div class="status-cell">
-                      <span class="status-button preview">Preview</span>
-                      <span class="status-button start">Start Exam</span>
+                      <span class="status-button preview"  (click)="openPreview(item)">Preview</span>
+                      <span class="status-button start" (click)="navigateToExam()">Start Exam</span>
                     </div>
                   </td>
                 </tr>

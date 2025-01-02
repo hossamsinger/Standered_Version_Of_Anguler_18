@@ -29,3 +29,13 @@ $sizeMedium: 0.75em;
 $sizeLarge: 1em;
 $sizeXLarge: 1.5em;
 $sizeXXLarge: 3em;
+
+.success-snackbar {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .error-snackbar {
+    background-color: #f44336;
+    color: #fff;
+  }

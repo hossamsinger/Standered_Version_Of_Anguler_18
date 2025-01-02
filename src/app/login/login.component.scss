@@ -45,10 +45,9 @@ a{
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
   }
   
-  .login-button {
+  .login-button , .Register-button{
     width: 100%;
     padding: 0.75rem;
-    background-color: #001529;
     color: white;
     border: none;
     border-radius: 4px;
@@ -56,9 +55,17 @@ a{
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
-  .login-button:hover {
+  .login-button{
     background-color: #002140;
+    &.login-button:hover{
+      background-color: #1890ff;
+    }
+  }
+  .Register-button{
+    background-color: #1890ff ;
+    &.Register-button:hover{
+      background-color: #002140;
+    }
   }
   
   .register-text {
@@ -78,13 +85,13 @@ a{
   }
   // ====================================================
   // ==================snackbar Style ===================
-  .success-  {
-    background-color: #4caf50; /* Green for success */
-    color: white;
+  
+  .success-snackbar {
+    background-color: #4caf50 !important;
+    color: #fff;
   }
   
   .error-snackbar {
-    background-color: #f44336; /* Red for error */
-    color: white;
+    background-color: #f44336 !important;
+    color: #fff;
   }
-  

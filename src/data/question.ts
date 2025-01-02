@@ -3,7 +3,7 @@ export interface Question {
   title: string;
   category: string;
   choices: string[];
-  correctAnswer?: number;
+  correctAnswer?: number; 
   level?: number;
   progress?: number;
 }

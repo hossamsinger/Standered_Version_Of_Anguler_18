@@ -7,16 +7,14 @@ export interface Toast {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ToastService {
   private toastSubject = new BehaviorSubject<Toast | null>(null);
   toast$ = this.toastSubject.asObservable();
 
   show(message: string, type: Toast['type'] = 'info') {
+    console.log('ToastService.show called with:', { message, type });
     this.toastSubject.next({ message, type });
-    setTimeout(() => {
-      this.toastSubject.next(null);
-    }, 3000);
   }
 }

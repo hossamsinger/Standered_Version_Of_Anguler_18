@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { NgIf , NgFor } from '@angular/common';
 import { dashboard_data } from '../../data/dashboard';
+import { PreviewDialogComponent } from '../../shared/components/preview-dialog/preview-dialog.component';
+import {  Router } from '@angular/router'; // Correct import for routing functionality
+import { MatDialog } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-dashboard',
   imports:[NgIf , NgFor],
@@ -9,7 +13,11 @@ import { dashboard_data } from '../../data/dashboard';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  showTableView = true; // Toggle between list view and table view
+  constructor(
+    private router: Router,
+    private dialog: MatDialog
+  ) {}  
+  showTableView = true; 
   // items = dashboard_data;
   items = [
     {
@@ -90,5 +98,15 @@ export class DashboardComponent {
 
   setTableView(): void {
     this.showTableView = true;
+  }
+  navigateToExam(): void {    
+    this.router.navigate(['exam']);   }
+
+  openPreview(item: any): void {
+    this.dialog.open(PreviewDialogComponent, {
+      width: '1200px',
+      height: '600px',
+      data: { title: item.title , item }
+    });
   }
 }
